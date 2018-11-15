@@ -15,7 +15,7 @@ module NgpVan
         get(path: 'supporterGroups', params: params)
       end
 
-      def add_person_to_support_group(supporter_group_id:, id:)
+      def add_person_to_supporter_group(supporter_group_id:, id:)
         put(path: "supporterGroups/#{supporter_group_id}/people/#{id}")
       end
 

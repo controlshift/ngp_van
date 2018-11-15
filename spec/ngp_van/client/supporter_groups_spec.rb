@@ -103,7 +103,7 @@ module NgpVan
         end
       end
 
-      describe '#add_person_to_support_group' do
+      describe '#add_person_to_supporter_group' do
         let(:url) { build_url(client: client, path: 'supporterGroups/1122/people/3344') }
 
         before do
@@ -111,7 +111,7 @@ module NgpVan
         end
 
         it 'requests the correct resource' do
-          client.add_person_to_support_group(supporter_group_id: 1122, id: 3344)
+          client.add_person_to_supporter_group(supporter_group_id: 1122, id: 3344)
           expect(a_request(:put, url)).to have_been_made
         end
       end
@@ -123,7 +123,7 @@ module NgpVan
           stub_request(:delete, url).to_return(status: 204)
 
           it 'requests the correct resource' do
-            client.add_person_to_support_group(supporter_group_id: 1122, id: 3344)
+            client.add_person_to_supporter_group(supporter_group_id: 1122, id: 3344)
             expect(a_request(:delete, url)).to have_been_made
           end
         end
