@@ -26,9 +26,13 @@ module NgpVan
 
     private
 
+    def esc(untrusted)
+      CGI.escape(untrusted.to_s)
+    end
+
     def request(method:, path:, params: {}, body: {})
       response = connection.send(method) do |request|
-        request.path = URI.encode(path)
+        request.path = path
         request.params = params
         request.body = ::JSON.generate(body) unless body.empty?
       end

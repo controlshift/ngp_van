@@ -8,7 +8,7 @@ module NgpVan
       end
 
       def printed_list(id:, params: {})
-        get(path: "printedLists/#{id}", params: params)
+        get(path: "printedLists/#{esc(id)}", params: params)
       end
     end
   end

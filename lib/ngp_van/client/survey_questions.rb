@@ -8,7 +8,7 @@ module NgpVan
       end
 
       def survey_question(id:, params: {})
-        get(path: "surveyQuestions/#{id}", params: params)
+        get(path: "surveyQuestions/#{esc(id)}", params: params)
       end
     end
   end

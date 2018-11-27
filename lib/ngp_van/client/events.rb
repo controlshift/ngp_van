@@ -8,11 +8,11 @@ module NgpVan
       end
 
       def create_event_shift(id:, body: {})
-        post(path: "events/#{id}/shifts", body: body)
+        post(path: "events/#{esc(id)}/shifts", body: body)
       end
 
       def event(id:, params: {})
-        get(path: "events/#{id}", params: params)
+        get(path: "events/#{esc(id)}", params: params)
       end
 
       def events(params: {})
@@ -20,11 +20,11 @@ module NgpVan
       end
 
       def update_event(id:, body: {})
-        put(path: "events/#{id}", body: body)
+        put(path: "events/#{esc(id)}", body: body)
       end
 
       def delete_event(id:)
-        delete(path: "events/#{id}")
+        delete(path: "events/#{esc(id)}")
       end
     end
   end

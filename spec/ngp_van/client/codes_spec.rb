@@ -109,6 +109,19 @@ module NgpVan
           code = client.code(id: 20_515, params: params)
           expect(code['codeId']).to eq(20_515)
         end
+
+        describe 'ssrf protection' do
+          let(:url) { 'https://api.securevan.com/v4/codes/foo%2Fbar' }
+
+          it 'should not trust the input code' do
+            client.code(id: 'foo/bar', params: params)
+
+            expect(
+                a_request(:get, url)
+                    .with(query: params)
+            ).to have_been_made
+          end
+        end
       end
 
       describe '#create_code' do

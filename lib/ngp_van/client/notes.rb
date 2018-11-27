@@ -12,7 +12,7 @@ module NgpVan
       end
 
       def note_category(id:, params: {})
-        get(path: "notes/categories/#{id}", params: params)
+        get(path: "notes/categories/#{esc(id)}", params: params)
       end
     end
   end

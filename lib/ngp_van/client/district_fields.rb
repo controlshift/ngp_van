@@ -8,7 +8,7 @@ module NgpVan
       end
 
       def district_field(id:)
-        get(path: "districtFields/#{id}")
+        get(path: "districtFields/#{esc(id)}")
       end
     end
   end

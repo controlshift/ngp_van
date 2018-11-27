@@ -16,19 +16,19 @@ module NgpVan
       end
 
       def person_by_type(id:, type:, params: {})
-        get(path: "people/#{type}:#{id}", params: params)
+        get(path: "people/#{esc(type)}:#{esc(id)}", params: params)
       end
 
       def create_canvass_responses_for_person(id:, body: {})
-        post(path: "people/#{id}/canvassResponses", body: body)
+        post(path: "people/#{esc(id)}/canvassResponses", body: body)
       end
 
       def create_canvass_responses_for_person_by_type(id:, type:, body: {})
-        post(path: "people/#{type}:#{id}/canvassResponses", body: body)
+        post(path: "people/#{esc(type)}:#{esc(id)}/canvassResponses", body: body)
       end
 
       def apply_code_to_person(id:, body: {})
-        post(path: "people/#{id}/codes", body: body)
+        post(path: "people/#{esc(id)}/codes", body: body)
       end
     end
   end
