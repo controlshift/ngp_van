@@ -12,7 +12,7 @@ module NgpVan
       end
 
       def code(id:, params: {})
-        get(path: "codes/#{id}", params: params)
+        get(path: "codes/#{esc(id)}", params: params)
       end
 
       def create_code(body: {})
@@ -20,11 +20,11 @@ module NgpVan
       end
 
       def update_code(id:, body: {})
-        put(path: "codes/#{id}", body: body)
+        put(path: "codes/#{esc(id)}", body: body)
       end
 
       def delete_code(id:)
-        delete(path: "codes/#{id}")
+        delete(path: "codes/#{esc(id)}")
       end
     end
   end

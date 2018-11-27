@@ -8,7 +8,7 @@ module NgpVan
       end
 
       def location(id:, params: {})
-        get(path: "locations/#{id}", params: params)
+        get(path: "locations/#{esc(id)}", params: params)
       end
 
       def find_or_create_location(body: {})
@@ -20,7 +20,7 @@ module NgpVan
       end
 
       def delete_location(id:)
-        delete(path: "locations/#{id}")
+        delete(path: "locations/#{esc(id)}")
       end
     end
   end

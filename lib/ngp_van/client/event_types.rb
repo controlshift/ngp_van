@@ -8,7 +8,7 @@ module NgpVan
       end
 
       def event_type(id:, params: {})
-        get(path: "events/types/#{id}", params: params)
+        get(path: "events/types/#{esc(id)}", params: params)
       end
     end
   end

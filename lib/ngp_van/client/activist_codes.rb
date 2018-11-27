@@ -8,7 +8,7 @@ module NgpVan
       end
 
       def activist_code(id:, params: {})
-        get(path: "activistCodes/#{id}", params: params)
+        get(path: "activistCodes/#{esc(id)}", params: params)
       end
     end
   end

@@ -8,7 +8,7 @@ module NgpVan
       end
 
       def minivan_export(id:, params: {})
-        get(path: "minivanExports/#{id}", params: params)
+        get(path: "minivanExports/#{esc(id)}", params: params)
       end
     end
   end
