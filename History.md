@@ -1,3 +1,42 @@
+# 0.5.0
+
+Release date: 2018-11-28
+
+- [ADDED] [Supporter Groups](https://developers.everyaction.com/van-api#supporter-groups) endpoint ([#11](https://github.com/christopherstyles/ngp_van/pull/11) by @lavaturtle and @anero)
+
+# 0.4.0
+
+Release date: 2018-11-15
+
+- [ADDED] Store parsed errors from response on `NgpVan::Error` ([#8](https://github.com/christopherstyles/ngp_van/pull/8) by @anero)
+
+# 0.3.0
+
+Release date: 2018-11-14
+
+- [ADDED] Echoes endpoint ([#10](https://github.com/christopherstyles/ngp_van/pull/10) by @anero and @woodhull)
+
+# 0.2.0
+
+Release date: 2018-11-07
+
+- [ADDED] Ability to vary configuration per client object ([#9](https://github.com/christopherstyles/ngp_van/pull/9) by @anero)
+
+# 0.1.4
+
+Release date: 2018-05-02
+
+- [CHANGED] Circle CI has been replaced with Travis CI for continuous integration.
+- [CHANGED] Gem dependencies have been moved to the Gemfile.
+- [REMOVED] The deprecated 'codeclimate-test-reporter' gem has been removed.
+- [ADDED] Simplecov has been added for generating code coverage. This can be read by the codeclimate’s updated, unified, test reporter client.
+
+# 0.1.3
+
+Release date: 2018-05-01
+
+- [CHANGED] Version dependencies have been loosened for faraday and faraday_middleware so that newer versions can be installed.
+
 # 0.1.2
 
 Release date: 2016-07-04
