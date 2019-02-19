@@ -192,6 +192,43 @@ module NgpVan
           expect(reported_genders['items'].first['reportedGenderId']).to eq(19)
         end
       end
+
+      describe '#pronouns' do
+        let(:params) do
+          {
+            '$top' => 2
+          }
+        end
+
+        let(:response) { fixture('pronouns.json') }
+        let(:url) { build_url(client: client, path: 'pronouns') }
+
+        before do
+          stub_request(:get, url)
+            .with(query: params)
+            .to_return(
+              body: response
+            )
+        end
+
+        it 'requests the correct resource' do
+          client.pronouns(params: params)
+          expect(
+            a_request(:get, url)
+              .with(query: params)
+          ).to have_been_made
+        end
+
+        it 'returns an array of items' do
+          pronouns = client.pronouns(params: params)
+          expect(pronouns['items']).to be_a(Array)
+        end
+
+        it 'returns the requested data' do
+          pronouns = client.pronouns(params: params)
+          expect(pronouns['items'].first['preferredPronounId']).to eq(6)
+        end
+      end
     end
   end
 end

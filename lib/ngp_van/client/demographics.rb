@@ -22,6 +22,10 @@ module NgpVan
       def reported_genders(params: {})
         get(path: 'reportedGenders', params: params)
       end
+
+      def pronouns(params: {})
+        get(path: 'pronouns', params: params)
+      end
     end
   end
 end
