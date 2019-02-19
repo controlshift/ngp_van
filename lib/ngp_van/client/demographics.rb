@@ -7,6 +7,10 @@ module NgpVan
         get(path: 'reportedRaces', params: params)
       end
 
+      def reported_ethnicities(params: {})
+        get(path: 'reportedEthnicities', params: params)
+      end
+
       def reported_language_preferences(params: {})
         get(path: 'reportedLanguagePreferences', params: params)
       end

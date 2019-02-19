@@ -45,6 +45,43 @@ module NgpVan
         end
       end
 
+      describe '#reported_ethnicities' do
+        let(:params) do
+          {
+            '$top' => 2
+          }
+        end
+
+        let(:response) { fixture('reported_ethnicities.json') }
+        let(:url) { build_url(client: client, path: 'reportedEthnicities') }
+
+        before do
+          stub_request(:get, url)
+            .with(query: params)
+            .to_return(
+              body: response
+            )
+        end
+
+        it 'requests the correct resource' do
+          client.reported_ethnicities(params: params)
+          expect(
+            a_request(:get, url)
+              .with(query: params)
+          ).to have_been_made
+        end
+
+        it 'returns an array of items' do
+          reported_ethnicities = client.reported_ethnicities(params: params)
+          expect(reported_ethnicities['items']).to be_a(Array)
+        end
+
+        it 'returns the requested data' do
+          reported_ethnicities = client.reported_ethnicities(params: params)
+          expect(reported_ethnicities['items'].first['reportedEthnicityId']).to eq(2)
+        end
+      end
+
       describe '#reported_language_preferences' do
         let(:params) do
           {
