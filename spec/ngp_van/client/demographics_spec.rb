@@ -8,23 +8,23 @@ module NgpVan
     RSpec.describe Demographics do
       let(:client) { NgpVan::Client.new }
 
-      describe '#reported_races' do
-        let(:params) do
-          {
-            '$top' => 2
-          }
-        end
+      let(:params) do
+        {
+          '$top' => 2
+        }
+      end
 
+      before do
+        stub_request(:get, url)
+          .with(query: params)
+          .to_return(
+            body: response
+          )
+      end
+
+      describe '#reported_races' do
         let(:response) { fixture('reported_races.json') }
         let(:url) { build_url(client: client, path: 'reportedRaces') }
-
-        before do
-          stub_request(:get, url)
-            .with(query: params)
-            .to_return(
-              body: response
-            )
-        end
 
         it 'requests the correct resource' do
           client.reported_races(params: params)
@@ -46,22 +46,8 @@ module NgpVan
       end
 
       describe '#reported_ethnicities' do
-        let(:params) do
-          {
-            '$top' => 2
-          }
-        end
-
         let(:response) { fixture('reported_ethnicities.json') }
         let(:url) { build_url(client: client, path: 'reportedEthnicities') }
-
-        before do
-          stub_request(:get, url)
-            .with(query: params)
-            .to_return(
-              body: response
-            )
-        end
 
         it 'requests the correct resource' do
           client.reported_ethnicities(params: params)
@@ -83,22 +69,8 @@ module NgpVan
       end
 
       describe '#reported_language_preferences' do
-        let(:params) do
-          {
-            '$top' => 2
-          }
-        end
-
         let(:response) { fixture('reported_language_preferences.json') }
         let(:url) { build_url(client: client, path: 'reportedLanguagePreferences') }
-
-        before do
-          stub_request(:get, url)
-            .with(query: params)
-            .to_return(
-              body: response
-            )
-        end
 
         it 'requests the correct resource' do
           client.reported_language_preferences(params: params)
@@ -120,22 +92,8 @@ module NgpVan
       end
 
       describe '#reported_sexual_orientations' do
-        let(:params) do
-          {
-            '$top' => 2
-          }
-        end
-
         let(:response) { fixture('reported_sexual_orientations.json') }
         let(:url) { build_url(client: client, path: 'reportedSexualOrientations') }
-
-        before do
-          stub_request(:get, url)
-            .with(query: params)
-            .to_return(
-              body: response
-            )
-        end
 
         it 'requests the correct resource' do
           client.reported_sexual_orientations(params: params)
@@ -157,22 +115,8 @@ module NgpVan
       end
 
       describe '#reported_genders' do
-        let(:params) do
-          {
-            '$top' => 2
-          }
-        end
-
         let(:response) { fixture('reported_genders.json') }
         let(:url) { build_url(client: client, path: 'reportedGenders') }
-
-        before do
-          stub_request(:get, url)
-            .with(query: params)
-            .to_return(
-              body: response
-            )
-        end
 
         it 'requests the correct resource' do
           client.reported_genders(params: params)
@@ -194,22 +138,8 @@ module NgpVan
       end
 
       describe '#pronouns' do
-        let(:params) do
-          {
-            '$top' => 2
-          }
-        end
-
         let(:response) { fixture('pronouns.json') }
         let(:url) { build_url(client: client, path: 'pronouns') }
-
-        before do
-          stub_request(:get, url)
-            .with(query: params)
-            .to_return(
-              body: response
-            )
-        end
 
         it 'requests the correct resource' do
           client.pronouns(params: params)
