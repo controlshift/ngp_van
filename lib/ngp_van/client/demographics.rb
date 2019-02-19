@@ -14,6 +14,10 @@ module NgpVan
       def reported_language_preferences(params: {})
         get(path: 'reportedLanguagePreferences', params: params)
       end
+
+      def reported_sexual_orientations(params: {})
+        get(path: 'reportedSexualOrientations', params: params)
+      end
     end
   end
 end

@@ -118,6 +118,43 @@ module NgpVan
           expect(languages['items'].first['reportedLanguagePreferenceId']).to eq(2)
         end
       end
+
+      describe '#reported_sexual_orientations' do
+        let(:params) do
+          {
+            '$top' => 2
+          }
+        end
+
+        let(:response) { fixture('reported_sexual_orientations.json') }
+        let(:url) { build_url(client: client, path: 'reportedSexualOrientations') }
+
+        before do
+          stub_request(:get, url)
+            .with(query: params)
+            .to_return(
+              body: response
+            )
+        end
+
+        it 'requests the correct resource' do
+          client.reported_sexual_orientations(params: params)
+          expect(
+            a_request(:get, url)
+              .with(query: params)
+          ).to have_been_made
+        end
+
+        it 'returns an array of items' do
+          reported_sexual_orientations = client.reported_sexual_orientations(params: params)
+          expect(reported_sexual_orientations['items']).to be_a(Array)
+        end
+
+        it 'returns the requested data' do
+          reported_sexual_orientations = client.reported_sexual_orientations(params: params)
+          expect(reported_sexual_orientations['items'].first['reportedSexualOrientationId']).to eq(2)
+        end
+      end
     end
   end
 end
