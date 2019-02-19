@@ -18,6 +18,10 @@ module NgpVan
       def reported_sexual_orientations(params: {})
         get(path: 'reportedSexualOrientations', params: params)
       end
+
+      def reported_genders(params: {})
+        get(path: 'reportedGenders', params: params)
+      end
     end
   end
 end
