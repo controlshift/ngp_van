@@ -13,4 +13,5 @@ gem 'webmock', '~> 1.22'
 
 group :test do
   gem 'simplecov', require: false
+  gem 'faraday-detailed_logger'
 end
