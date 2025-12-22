@@ -43,7 +43,11 @@ module NgpVan
 
     def initialize(response = nil)
       @response = response
-      @body = ::JSON.parse(response[:body])
+      if response.response_headers['Content-Type']&.match(/application\/json/i)
+        @body = ::JSON.parse(response[:body])
+      else
+        @body = response[:body]
+      end
       @status = response[:status]
       @errors = body.delete('errors')
 
