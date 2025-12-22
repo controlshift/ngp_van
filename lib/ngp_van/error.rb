@@ -45,11 +45,11 @@ module NgpVan
       @response = response
       if response.response_headers['Content-Type']&.match(/application\/json/i)
         @body = ::JSON.parse(response[:body])
+        @errors = body.delete('errors')
       else
         @body = response[:body]
       end
       @status = response[:status]
-      @errors = body.delete('errors')
 
       super(build_error)
     end
