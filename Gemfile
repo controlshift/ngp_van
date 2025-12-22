@@ -6,6 +6,7 @@ gemspec
 
 gem 'rake', '>= 12.3.3'
 gem 'bundler'
+gem 'base64'
 
 group :test, :development do
   gem 'faker', '> 1.6'
