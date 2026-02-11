@@ -1,6 +1,6 @@
 ## [Unreleased]
 
-# 0.12.0
+# 1.0.0
 - [UPGRADED] Ruby to 4.0.0
 - [UPGRADED] Faraday compatibility from ~> 1.0 to >= 1.0.0, < 3.0
 - [CHANGED] Replaced faraday_middleware dependency with faraday-multipart.
