@@ -1,5 +1,11 @@
 ## [Unreleased]
 
+# 0.12.0
+- [UPGRADED] Ruby to 4.0.0
+- [UPGRADED] Faraday compatibility from ~> 1.0 to >= 1.0.0, < 3.0
+- [CHANGED] Replaced faraday_middleware dependency with faraday-multipart.
+- [CHANGED] Response middleware class from Faraday::Response::Middleware to Faraday::Middleware.
+
 # 0.11.0
 
 - [FIXED] Fix RaiseError middleware ([#42](https://github.com/christopherstyles/ngp_van/pull/42) by @lavaturtle).

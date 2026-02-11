@@ -29,7 +29,7 @@ module NgpVan
           expect(
             a_request(:post, url)
               .with(
-                body: body
+                body: JSON.generate(body)
               )
           ).to have_been_made
         end
@@ -61,7 +61,7 @@ module NgpVan
           expect(
             a_request(:post, url)
               .with(
-                body: body
+                body: JSON.generate(body)
               )
           ).to have_been_made
         end
@@ -171,7 +171,7 @@ module NgpVan
           expect(
             a_request(:post, url)
               .with(
-                body: body
+                body: JSON.generate(body)
               )
           ).to have_been_made
         end
@@ -209,7 +209,7 @@ module NgpVan
           expect(
             a_request(:post, url)
               .with(
-                body: body
+                body: JSON.generate(body)
               )
           ).to have_been_made
         end
@@ -238,7 +238,7 @@ module NgpVan
           expect(
             a_request(:post, url)
               .with(
-                body: request_body
+                body: request_body.to_json
               )
           ).to have_been_made
         end
@@ -292,7 +292,7 @@ module NgpVan
           expect(
             a_request(:post, url)
               .with(
-                body: body
+                body: JSON.generate(body)
               )
           ).to have_been_made
         end
@@ -367,7 +367,7 @@ module NgpVan
           expect(
             a_request(:post, url)
               .with(
-                body: body
+                body: JSON.generate(body)
               )
           ).to have_been_made
         end
@@ -404,7 +404,7 @@ module NgpVan
           expect(
             a_request(:post, url)
               .with(
-                body: body
+                body: JSON.generate(body)
               )
           ).to have_been_made
         end

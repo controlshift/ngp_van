@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   spec.summary = 'Ruby wrapper for the NGP VAN API'
   spec.version = NgpVan::VERSION.dup
 
-  spec.add_dependency 'faraday', '>= 1.0.0', '< 2.0'
-  spec.add_dependency 'faraday_middleware', '>= 0.10.0'
+  spec.add_dependency 'faraday', '>= 1.0.0', '< 3.0'
+  spec.add_dependency 'faraday-multipart', '>= 1.0.0'
+  spec.add_dependency 'json', '>= 1.0'
 end
