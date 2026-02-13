@@ -3,11 +3,11 @@
 module NgpVan
   # Current major release.
   # @return [Integer]
-  MAJOR = 1
+  MAJOR = 0
 
   # Current minor release.
   # @return [Integer]
-  MINOR = 0
+  MINOR = 11
 
   # Current patch level.
   # @return [Integer]

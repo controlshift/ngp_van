@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 require 'ngp_van/response/raise_error'
-require 'faraday'
-require 'faraday/multipart'
-require 'json'
+require 'faraday_middleware'
 
 module NgpVan
   module Connection
@@ -20,7 +18,9 @@ module NgpVan
       }
 
       Faraday::Connection.new(options) do |connection|
-        connection.request :authorization, :basic, config.application_name, config.api_key
+        connection.request :basic_auth, config.application_name, config.api_key
+
+        connection.request(:json)
         connection.use NgpVan::Response::RaiseError
         connection.adapter(Faraday.default_adapter)
       end
