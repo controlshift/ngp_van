@@ -19,7 +19,8 @@ module NgpVan
       Faraday::Connection.new(options) do |connection|
         connection.request :authorization, :basic, config.application_name, config.api_key
 
-        connection.request(:json)
+        connection.request :json
+        connection.response :json
         connection.use NgpVan::Response::RaiseError
         connection.adapter(Faraday.default_adapter)
       end
