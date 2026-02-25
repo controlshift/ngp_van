@@ -1,7 +1,5 @@
 # frozen_string_literal: true
-
-require 'ngp_van/response/raise_error'
-require 'faraday_middleware'
+require 'ngp_van/response'
 
 module NgpVan
   module Connection

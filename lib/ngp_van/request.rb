@@ -33,7 +33,7 @@ module NgpVan
         request.body = ::JSON.generate(body) unless body.empty?
       end
 
-      Response.create(response.body)
+      response.body
     end
   end
 end
