@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'json'
-
 module NgpVan
   module Request
     # Perform an HTTP DELETE request
@@ -30,7 +28,7 @@ module NgpVan
       response = connection.send(method) do |request|
         request.path = path
         request.params = params
-        request.body = ::JSON.generate(body) unless body.empty?
+        request.body = body unless body.empty?
       end
 
       Response.create(response.body)
